@@ -1,3 +1,5 @@
+import {} from '';
+
 const button0 = document.querySelector('#button0');
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector('#button2');
@@ -10,7 +12,13 @@ const locales = [{
     buttonFunctions: [rest, studyMagic, eat,read, leave],
     text: 'You are now at Home!, chose what you want to do.',
     backgrounds: ["url(../images/room.gif) 50% 50%/cover", "url(../images/studyMagic.gif) 50% 65%/cover", "url(../images/readBook.gif) 50% 50%/cover", "url(../images/eat.gif) 50% 50%/cover"]
-},
+},{
+    name: 'menu',
+    buttonText: ['Go Home', 'Go Workout', 'Go to Store', 'Go to Dungeon', 'Start Demon King Journey'],
+    buttonFunctions: [goHome, goWorkout, goStore, goDungeon, goDemonKing],
+    text: 'Chose whatever you want to do! Keep in mind that we are counting on you to defeat the Demon King and bring peace to this world!',
+    backgrounds: ["url(../images/Sunlit.jpeg) 50% 70%/cover", "url(../images/mash.jpeg) 50% 70%/ cover", "url(../images/magicShop.jpeg) 50% 50%/ cover", "url(../images/dungeon.jpeg) 50% 50%/cover", "url(../images/demonKing.jpeg) 50% 50%/cover"]
+}
 ];
 
 let health = 100;
@@ -28,7 +36,7 @@ let monsterLevel;
 
 button0.addEventListener('click', () => {
     goHome();
-})
+});
 
 function update(local){
     button0.innerText = local.buttonText[0];
@@ -55,9 +63,7 @@ function update(local){
     button3.addEventListener('click', () => {
         local.buttonFunctions[3];
     });
-    button4.addEventListener('click', () => {
-        local.buttonFunctions[4];
-    });
+    button4.onclick = leave;
 
     text.innerHTML = `<div>
         <p>${local.text}</p>
@@ -68,9 +74,26 @@ function goHome() {
     update(locales[0]);
 }
 
+function goWorkout(){
+
+}
+
+function goStore(){
+
+}
+
+function goDungeon(){
+
+}
+
+function goDemonKing(){
+
+}
+
 function rest() {
 
 }
+
 
 function studyMagic() {
 
@@ -85,5 +108,5 @@ function eat(){
 }
 
 function leave() {
-
+    update(locales[1]);
 }
