@@ -3,8 +3,7 @@ const button1 = document.querySelector('#button1');
 const button2 = document.querySelector('#button2');
 const button3 = document.querySelector('#button3');
 const button4 = document.querySelector('#button4');
-const text = document.querySelector('#text.container');
-
+const text = document.querySelector('#text-container');
 const locales = [{
     name: 'home',
     buttonText: ['rest', 'study magic', 'read book', 'eat','leave'],
@@ -13,6 +12,19 @@ const locales = [{
     backgrounds: ["url(../images/room.gif) 50% 50%/cover", "url(../images/studyMagic.gif) 50% 65%/cover", "url(../images/readBook.gif) 50% 50%/cover", "url(../images/eat.gif) 50% 50%/cover"]
 },
 ];
+
+let health = 100;
+let knowledge = 100;
+let power = 50;
+let mana = 50;
+let XP = 0;
+let level = 0;
+
+let monsterHealth;
+let monsterKnowledge;
+let monsterPower;
+let monsterMana;
+let monsterLevel;
 
 button0.addEventListener('click', () => {
     goHome();
@@ -48,8 +60,8 @@ function update(local){
     });
 
     text.innerHTML = `<div>
-        <p>${local.text}<p>
-    </div>`
+        <p>${local.text}</p>
+    </div>` 
 }
 
 function goHome() {
@@ -57,7 +69,7 @@ function goHome() {
 }
 
 function rest() {
-    
+
 }
 
 function studyMagic() {
